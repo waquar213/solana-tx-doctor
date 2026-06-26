@@ -1,3 +1,14 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="Solana Transaction Doctor — diagnose & fix failed, reverted, or dropped Solana transactions" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-14F195?style=flat-square" alt="MIT">
+  <img src="https://img.shields.io/badge/Solana-AI%20Kit-9945FF?style=flat-square" alt="Solana AI Kit">
+  <img src="https://img.shields.io/badge/stack-2026-9945FF?style=flat-square" alt="2026 stack">
+  <img src="https://img.shields.io/badge/decoder-tested%20on%20mainnet-14F195?style=flat-square" alt="tested">
+</p>
+
 # Solana Transaction Doctor 🩺
 
 **An AI skill that diagnoses and fixes failed, reverted, or dropped Solana transactions.**
@@ -29,6 +40,10 @@ This skill packages all of that into a token-efficient, progressively-loaded ref
 
 ## What it does
 
+<p align="center">
+  <img src="assets/architecture.svg" alt="solana-tx-doctor architecture: inputs route through the SKILL.md hub, classify → decode → fix → verify, backed by focused references and shipped components" width="100%">
+</p>
+
 | Capability | Where |
 |------------|-------|
 | Classify **any** failure from its logs/error into a family | `skill/diagnose.md` |
@@ -44,6 +59,10 @@ Plus a specialized **agent** (`tx-doctor`), two **commands** (`/diagnose-tx`, `/
 ## Worked example (real, not a mock)
 
 The bundled decoder run against a real failed mainnet transaction:
+
+<p align="center">
+  <img src="assets/decode-demo.svg" alt="Terminal output: decode-tx.mjs diagnosing a real failed mainnet transaction as a slippage revert (MinReturnNotReached, 6010 / 0x177a)" width="80%">
+</p>
 
 ```bash
 node scripts/decode-tx.mjs CYAcwp3b8d88Lwf4C6uBWjEAsj1KnGLhytw3c2DQR3QUhHfcy6d7t7kmdVs33knuvW9kby3UCUUuWBwGtVXLB18
@@ -123,6 +142,7 @@ solana-tx-doctor/
 │   └── diagnostics.md      # decode-don't-guess, two-strike, read-only safety
 ├── scripts/
 │   └── decode-tx.mjs       # zero-dep, read-only transaction decoder
+├── assets/                 # banner, architecture diagram, demo (SVG)
 ├── CLAUDE.md               # config hub for the kit
 ├── install.sh
 └── LICENSE                 # MIT

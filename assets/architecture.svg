@@ -1,0 +1,119 @@
+<svg viewBox="0 0 1080 720" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="sol" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9945FF"/>
+      <stop offset="1" stop-color="#14F195"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E16"/>
+      <stop offset="1" stop-color="#0E1320"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5B6B82"/>
+    </marker>
+  </defs>
+
+  <rect width="1080" height="720" rx="20" fill="url(#bg)"/>
+  <rect x="2" y="2" width="1076" height="716" rx="19" fill="none" stroke="#1B2638" stroke-width="2"/>
+
+  <text x="40" y="56" font-size="26" font-weight="800" fill="#E6EDF3" letter-spacing="-0.5">How solana-tx-doctor works</text>
+  <text x="40" y="84" font-size="15" fill="#8595AB" font-family="'SF Mono', Menlo, monospace">Progressive disclosure · decode-don't-guess · read-only by default</text>
+
+  <!-- INPUTS -->
+  <text x="40" y="130" font-size="13" font-weight="700" fill="#9945FF" letter-spacing="1">INPUT</text>
+  <g font-size="14" fill="#C9D4E2">
+    <g>
+      <rect x="40" y="142" width="200" height="46" rx="10" fill="#11192B" stroke="#2A3A55"/>
+      <text x="58" y="170">tx signature</text>
+    </g>
+    <g>
+      <rect x="40" y="200" width="200" height="46" rx="10" fill="#11192B" stroke="#2A3A55"/>
+      <text x="58" y="228">program logs</text>
+    </g>
+    <g>
+      <rect x="40" y="258" width="200" height="46" rx="10" fill="#11192B" stroke="#2A3A55"/>
+      <text x="58" y="286">SendTransactionError</text>
+    </g>
+    <g>
+      <rect x="40" y="316" width="200" height="46" rx="10" fill="#11192B" stroke="#2A3A55"/>
+      <text x="58" y="344">"won't land" / dropped</text>
+    </g>
+  </g>
+
+  <!-- HUB -->
+  <g>
+    <rect x="320" y="180" width="220" height="124" rx="14" fill="#120E22" stroke="url(#sol)" stroke-width="2.5"/>
+    <text x="430" y="222" text-anchor="middle" font-size="18" font-weight="800" fill="#E6EDF3">SKILL.md</text>
+    <text x="430" y="248" text-anchor="middle" font-size="13" fill="#9FB0C3">routing hub</text>
+    <text x="430" y="278" text-anchor="middle" font-size="12" fill="#7C8BA1" font-family="'SF Mono', Menlo, monospace">classify the failure</text>
+  </g>
+  <!-- input arrows to hub -->
+  <g stroke="#5B6B82" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M240,165 C285,165 290,232 318,238"/>
+    <path d="M240,223 C280,223 290,238 318,240"/>
+    <path d="M240,281 C280,281 295,250 318,244"/>
+    <path d="M240,339 C285,339 292,252 318,248"/>
+  </g>
+
+  <!-- THE LOOP -->
+  <text x="620" y="130" font-size="13" font-weight="700" fill="#14F195" letter-spacing="1">DECODE → EXPLAIN → FIX → VERIFY</text>
+
+  <!-- diagnose -->
+  <g>
+    <rect x="620" y="148" width="190" height="58" rx="12" fill="#11192B" stroke="#2A3A55"/>
+    <text x="638" y="174" font-size="14" font-weight="700" fill="#E6EDF3">diagnose.md</text>
+    <text x="638" y="194" font-size="12" fill="#8595AB">decision tree</text>
+  </g>
+  <!-- error-codes -->
+  <g>
+    <rect x="620" y="220" width="190" height="58" rx="12" fill="#11192B" stroke="#2A3A55"/>
+    <text x="638" y="246" font-size="14" font-weight="700" fill="#E6EDF3">error-codes.md</text>
+    <text x="638" y="266" font-size="12" fill="#8595AB">hex→dec · Anchor/SPL/System</text>
+  </g>
+  <!-- fix files -->
+  <g>
+    <rect x="620" y="292" width="190" height="58" rx="12" fill="#11192B" stroke="#2A3A55"/>
+    <text x="638" y="318" font-size="14" font-weight="700" fill="#E6EDF3">landing.md</text>
+    <text x="638" y="338" font-size="12" fill="#8595AB">fees · retries · Jito · nonces</text>
+  </g>
+
+  <g stroke="#5B6B82" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M540,224 C580,210 585,180 616,177"/>
+    <path d="M540,242 C585,245 590,248 616,249"/>
+    <path d="M540,260 C580,280 588,318 616,321"/>
+  </g>
+
+  <!-- MORE FILES row -->
+  <text x="40" y="420" font-size="13" font-weight="700" fill="#9945FF" letter-spacing="1">FOCUSED REFERENCES (loaded only when needed)</text>
+  <g font-size="13" fill="#C9D4E2" font-family="'SF Mono', Menlo, monospace">
+    <g><rect x="40" y="436" width="232" height="44" rx="10" fill="#11192B" stroke="#243349"/><text x="58" y="463">compute-budget.md</text></g>
+    <g><rect x="288" y="436" width="232" height="44" rx="10" fill="#11192B" stroke="#243349"/><text x="306" y="463">token-errors.md</text></g>
+    <g><rect x="536" y="436" width="232" height="44" rx="10" fill="#11192B" stroke="#243349"/><text x="554" y="463">simulation.md</text></g>
+    <g><rect x="784" y="436" width="252" height="44" rx="10" fill="#11192B" stroke="#243349"/><text x="802" y="463">tooling.md · resources.md</text></g>
+  </g>
+
+  <!-- COMPONENTS -->
+  <text x="40" y="540" font-size="13" font-weight="700" fill="#14F195" letter-spacing="1">SHIPPED COMPONENTS</text>
+  <g font-size="13">
+    <g><rect x="40" y="556" width="232" height="58" rx="10" fill="#0E1626" stroke="#243349"/>
+       <text x="58" y="582" font-weight="700" fill="#E6EDF3">agent</text>
+       <text x="58" y="602" fill="#8595AB" font-family="'SF Mono', Menlo, monospace">tx-doctor</text></g>
+    <g><rect x="288" y="556" width="232" height="58" rx="10" fill="#0E1626" stroke="#243349"/>
+       <text x="306" y="582" font-weight="700" fill="#E6EDF3">commands</text>
+       <text x="306" y="602" fill="#8595AB" font-family="'SF Mono', Menlo, monospace">/diagnose-tx · /fix-landing</text></g>
+    <g><rect x="536" y="556" width="232" height="58" rx="10" fill="#0E1626" stroke="#243349"/>
+       <text x="554" y="582" font-weight="700" fill="#E6EDF3">rules</text>
+       <text x="554" y="602" fill="#8595AB" font-family="'SF Mono', Menlo, monospace">diagnostics.md</text></g>
+    <g><rect x="784" y="556" width="252" height="58" rx="10" fill="#0E1626" stroke="url(#sol)" stroke-width="1.5"/>
+       <text x="802" y="582" font-weight="700" fill="#E6EDF3">script (read-only)</text>
+       <text x="802" y="602" fill="#14F195" font-family="'SF Mono', Menlo, monospace">decode-tx.mjs ✓ tested</text></g>
+  </g>
+
+  <!-- OUTPUT -->
+  <g>
+    <rect x="40" y="640" width="996" height="56" rx="12" fill="#0C1320" stroke="#1E2A3E"/>
+    <text x="60" y="667" font-size="14" font-weight="700" fill="#E6EDF3">OUTPUT →</text>
+    <text x="150" y="667" font-size="14" fill="#9FB0C3">Root cause (cited code/log line) · Why · Minimal fix (copy-paste) · Verify</text>
+    <text x="60" y="687" font-size="12" fill="#7C8BA1" font-family="'SF Mono', Menlo, monospace">never guesses · never fabricates a code · two-strike rule · never asks for private keys</text>
+  </g>
+</svg>
